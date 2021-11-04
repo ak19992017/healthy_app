@@ -11,12 +11,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange  ,
+        primarySwatch: Colors.red,
         fontFamily: "Poppins",
         tooltipTheme: TooltipThemeData(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Colors.deepOrange,
+            color: Colors.red,
           ),
           height: 35,
           padding: const EdgeInsets.all(10.0),

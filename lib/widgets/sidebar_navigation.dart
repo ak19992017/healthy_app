@@ -25,33 +25,27 @@ class _SideBarNavigationState extends State<SideBarNavigation> {
             selectedIndex: _selectedIndex,
             destinations: const <NavigationRailDestination>[
               NavigationRailDestination(
-                icon: Tooltip(
-                    message: "Dashboard", child: Icon(EvaIcons.gridOutline)),
+                icon: Icon(EvaIcons.gridOutline),
                 selectedIcon: Icon(EvaIcons.grid),
                 label: Text('Dashboard'),
               ),
               NavigationRailDestination(
-                icon: Tooltip(
-                    message: "Trending",
-                    child: Icon(EvaIcons.trendingUpOutline)),
+                icon: Icon(EvaIcons.trendingUpOutline),
                 selectedIcon: Icon(EvaIcons.trendingUp),
                 label: Text('Trending'),
               ),
               NavigationRailDestination(
-                icon: Tooltip(
-                    message: "Music", child: Icon(EvaIcons.musicOutline)),
+                icon: Icon(EvaIcons.musicOutline),
                 selectedIcon: Icon(EvaIcons.music),
                 label: Text('Music'),
               ),
               NavigationRailDestination(
-                icon: Tooltip(
-                    message: "Bookmarks", child: Icon(EvaIcons.starOutline)),
+                icon: Icon(EvaIcons.starOutline),
                 selectedIcon: Icon(EvaIcons.star),
                 label: Text('Bookmarks'),
               ),
               NavigationRailDestination(
-                icon: Tooltip(
-                    message: "Settings", child: Icon(Icons.settings_outlined)),
+                icon: Icon(Icons.settings_outlined),
                 selectedIcon: Icon(Icons.settings),
                 label: Text('Settings'),
               ),
@@ -90,14 +84,14 @@ class _SideBarNavigationState extends State<SideBarNavigation> {
           )
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        label: Text("CREATE"),
-        icon: Icon(Icons.add),
+      floatingActionButton: FloatingActionButton(
+        child: _extended ? Icon(EvaIcons.arrowLeft) : Icon(EvaIcons.arrowRight),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         backgroundColor: Colors.black,
         onPressed: () => setState(() {
           _extended = !_extended;
         }),
+        tooltip: "Toggle",
       ),
     );
   }
