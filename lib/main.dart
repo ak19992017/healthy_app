@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:healthy_app/screens/home_screen.dart';
+
+import 'package:healthy_app/widgets/sidebar_navigation.dart';
 
 void main() => runApp(const MyApp());
 
@@ -29,7 +30,9 @@ class MyApp extends StatelessWidget {
           textStyle: const TextStyle(fontSize: 15, color: Colors.white),
         ),
       ),
-      home: const HomeScreen(),
+      home: const Scaffold(
+        body: SideBarNavigation(),
+      ),
     );
   }
 }

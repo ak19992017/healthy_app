@@ -1,5 +1,8 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:healthy_app/screens/favourites_page.dart';
+import 'package:healthy_app/screens/settings_page.dart';
+import 'package:healthy_app/screens/todo_page.dart';
 import 'package:healthy_app/widgets/extended_fab.dart';
 import 'package:healthy_app/widgets/healthy_logo.dart';
 
@@ -20,21 +23,22 @@ class _SideBarNavigationState extends State<SideBarNavigation> {
         children: <Widget>[
           NavigationRail(
             selectedIndex: _selectedIndex,
+            leading: Column(
+              children: [
+                HealthyLogo(extended: _extended),
+                const ExtendedFAB(),
+              ],
+            ),
             destinations: const <NavigationRailDestination>[
               NavigationRailDestination(
                 icon: Icon(EvaIcons.gridOutline),
                 selectedIcon: Icon(EvaIcons.grid),
-                label: Text('Dashboard'),
-              ),
-              NavigationRailDestination(
-                icon: Icon(EvaIcons.trendingUpOutline),
-                selectedIcon: Icon(EvaIcons.trendingUp),
-                label: Text('Trending'),
+                label: Text('To Do'),
               ),
               NavigationRailDestination(
                 icon: Icon(EvaIcons.starOutline),
                 selectedIcon: Icon(EvaIcons.star),
-                label: Text('Bookmarks'),
+                label: Text('Favourites'),
               ),
               NavigationRailDestination(
                 icon: Icon(Icons.settings_outlined),
@@ -46,12 +50,6 @@ class _SideBarNavigationState extends State<SideBarNavigation> {
             // labelType: NavigationRailLabelType.none,
             elevation: 20,
             // groupAlignment: 1,
-            leading: Column(
-              children: [
-                HealthyLogo(extended: _extended),
-                const ExtendedFAB(),
-              ],
-            ),
             trailing: Tooltip(
               message: "Log Out",
               child: IconButton(
@@ -72,7 +70,7 @@ class _SideBarNavigationState extends State<SideBarNavigation> {
           const VerticalDivider(thickness: 1, width: 1),
           // This is the main content.
           Expanded(
-            child: Center(child: Text('selectedIndex: $_selectedIndex')),
+            child: Center(child: buildPages()),
           )
         ],
       ),
@@ -86,5 +84,18 @@ class _SideBarNavigationState extends State<SideBarNavigation> {
         tooltip: "Toggle",
       ),
     );
+  }
+
+  Widget buildPages() {
+    switch (_selectedIndex) {
+      case 0:
+        return const ToDoPage();
+      case 1:
+        return const FavouritesPage();
+      case 2:
+        return const SettingsPage();
+      default:
+        return const ToDoPage();
+    }
   }
 }
