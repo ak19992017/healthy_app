@@ -1,9 +1,6 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'dart:ui';
-
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:healthy_app/widgets/extended_fab.dart';
 import 'package:healthy_app/widgets/healthy_logo.dart';
 
 class SideBarNavigation extends StatefulWidget {
@@ -57,14 +54,14 @@ class _SideBarNavigationState extends State<SideBarNavigation> {
             leading: Column(
               children: [
                 HealthyLogo(extended: _extended),
-                ExtendedFAB(),
+                const ExtendedFAB(),
               ],
             ),
             trailing: Tooltip(
               message: "Log Out",
               child: IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.logout_rounded, color: Colors.red),
+                icon: const Icon(Icons.logout_rounded, color: Colors.red),
               ),
             ),
             // minWidth: 56,
@@ -72,7 +69,7 @@ class _SideBarNavigationState extends State<SideBarNavigation> {
             onDestinationSelected: (int index) => setState(() {
               _selectedIndex = index;
             }),
-            selectedLabelTextStyle: TextStyle(
+            selectedLabelTextStyle: const TextStyle(
               color: Colors.black,
               fontSize: 20,
             ),
@@ -85,7 +82,9 @@ class _SideBarNavigationState extends State<SideBarNavigation> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        child: _extended ? Icon(EvaIcons.arrowLeft) : Icon(EvaIcons.arrowRight),
+        child: _extended
+            ? const Icon(EvaIcons.arrowLeft)
+            : const Icon(EvaIcons.arrowRight),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         backgroundColor: Colors.black,
         onPressed: () => setState(() {
@@ -93,45 +92,6 @@ class _SideBarNavigationState extends State<SideBarNavigation> {
         }),
         tooltip: "Toggle",
       ),
-    );
-  }
-}
-
-class ExtendedFAB extends StatelessWidget {
-  const ExtendedFAB({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final Animation<double> animation =
-        NavigationRail.extendedAnimation(context);
-    return AnimatedBuilder(
-      animation: animation,
-      builder: (BuildContext context, Widget? child) {
-        // The extended fab has a shorter height than the regular fab.
-        return Container(
-          height: 56,
-          padding: EdgeInsets.symmetric(
-            vertical: lerpDouble(0, 5, animation.value)!,
-          ),
-          child: animation.value == 0
-              ? FloatingActionButton(
-                  child: const Icon(Icons.add),
-                  onPressed: () {},
-                )
-              : Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  widthFactor: animation.value,
-                  child: Padding(
-                    padding: const EdgeInsetsDirectional.only(start: 8),
-                    child: FloatingActionButton.extended(
-                      icon: const Icon(Icons.add),
-                      label: const Text('CREATE'),
-                      onPressed: () {},
-                    ),
-                  ),
-                ),
-        );
-      },
     );
   }
 }

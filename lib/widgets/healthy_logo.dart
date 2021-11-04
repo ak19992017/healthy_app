@@ -11,22 +11,25 @@ class HealthyLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Icon(
-            Icons.favorite,
-            color: Colors.red,
-          ),
-          if (_extended)
-            const Text(
-              "Healthy",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+    return Tooltip(
+      message: "a PRO dev TOOL",
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 45),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Icon(
+              Icons.favorite,
+              color: Colors.red,
             ),
-        ],
+            if (_extended)
+              const Text(
+                "Healthy",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+          ],
+        ),
       ),
     );
   }
