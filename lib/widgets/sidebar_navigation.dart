@@ -32,11 +32,6 @@ class _SideBarNavigationState extends State<SideBarNavigation> {
                 label: Text('Trending'),
               ),
               NavigationRailDestination(
-                icon: Icon(EvaIcons.musicOutline),
-                selectedIcon: Icon(EvaIcons.music),
-                label: Text('Music'),
-              ),
-              NavigationRailDestination(
                 icon: Icon(EvaIcons.starOutline),
                 selectedIcon: Icon(EvaIcons.star),
                 label: Text('Bookmarks'),
@@ -85,8 +80,6 @@ class _SideBarNavigationState extends State<SideBarNavigation> {
         child: _extended
             ? const Icon(EvaIcons.arrowLeft)
             : const Icon(EvaIcons.arrowRight),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        backgroundColor: Colors.black,
         onPressed: () => setState(() {
           _extended = !_extended;
         }),

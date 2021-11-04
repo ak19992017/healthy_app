@@ -13,6 +13,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
         fontFamily: "Poppins",
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          backgroundColor: Colors.black,
+        ),
         tooltipTheme: TooltipThemeData(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),

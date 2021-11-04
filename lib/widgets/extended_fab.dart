@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 
 class ExtendedFAB extends StatelessWidget {
@@ -19,7 +20,7 @@ class ExtendedFAB extends StatelessWidget {
           ),
           child: animation.value == 0
               ? FloatingActionButton(
-                  child: const Icon(Icons.add),
+                  child: const Icon(EvaIcons.plus),
                   onPressed: () {},
                 )
               : Align(

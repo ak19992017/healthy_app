@@ -12,9 +12,9 @@ class HealthyLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Tooltip(
-      message: "a PRO dev TOOL",
+      message: "a 10X DEV tool",
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 45),
+        padding: const EdgeInsets.symmetric(vertical: 60),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
