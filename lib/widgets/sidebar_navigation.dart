@@ -15,7 +15,7 @@ class SideBarNavigation extends StatefulWidget {
 
 class _SideBarNavigationState extends State<SideBarNavigation> {
   int _selectedIndex = 0;
-  bool _extended = true;
+  bool _extended = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +70,7 @@ class _SideBarNavigationState extends State<SideBarNavigation> {
           const VerticalDivider(thickness: 1, width: 1),
           // This is the main content.
           Expanded(
-            child: Center(child: buildPages()),
+            child: buildPages(),
           )
         ],
       ),

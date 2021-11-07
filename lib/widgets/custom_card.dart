@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
@@ -15,6 +17,7 @@ class CustomCard extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
       clipBehavior: Clip.antiAlias,
       child: Container(
+        constraints: BoxConstraints.tight(Size.square(200)),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.redAccent, Colors.red],

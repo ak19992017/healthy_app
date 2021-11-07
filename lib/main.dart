@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:healthy_app/widgets/sidebar_navigation.dart';
 
 void main() => runApp(const MyApp());
