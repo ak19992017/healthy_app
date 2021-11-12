@@ -14,7 +14,7 @@ class HealthyLogo extends StatelessWidget {
     return Tooltip(
       message: "a 10X DEV tool",
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 60),
+        padding: const EdgeInsets.symmetric(vertical: 45),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,

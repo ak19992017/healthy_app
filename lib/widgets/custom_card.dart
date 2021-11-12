@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:healthy_app/models/to_do.dart';
-import 'package:healthy_app/models/to_do_model.dart';
 
 class CustomCard extends StatelessWidget {
   final ToDo todo;

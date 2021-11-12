@@ -3,8 +3,8 @@ import 'package:healthy_app/models/to_do_model.dart';
 import 'package:healthy_app/widgets/custom_card.dart';
 import 'package:provider/provider.dart';
 
-class ToDoPage extends StatelessWidget {
-  const ToDoPage({Key? key}) : super(key: key);
+class ToDosPage extends StatelessWidget {
+  const ToDosPage({Key? key}) : super(key: key);
 
   @override
   Widget build(context) {
@@ -19,8 +19,10 @@ class ToDoPage extends StatelessWidget {
     }
 
     return Scaffold(
-      body: Wrap(
-        children: buildCardWidgets(),
+      body: SingleChildScrollView(
+        child: Wrap(
+          children: buildCardWidgets(),
+        ),
       ),
     );
   }

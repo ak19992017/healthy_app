@@ -29,9 +29,19 @@ class SideBar extends StatelessWidget {
           label: Text('To Do'),
         ),
         NavigationRailDestination(
-          icon: Icon(EvaIcons.starOutline),
-          selectedIcon: Icon(EvaIcons.star),
-          label: Text('Favourites'),
+          icon: Icon(EvaIcons.messageSquareOutline),
+          selectedIcon: Icon(EvaIcons.messageSquare),
+          label: Text('Chats'),
+        ),
+        NavigationRailDestination(
+          icon: Icon(EvaIcons.videoOutline),
+          selectedIcon: Icon(EvaIcons.video),
+          label: Text('Video Calls'),
+        ),
+        NavigationRailDestination(
+          icon: Icon(EvaIcons.flashOutline),
+          selectedIcon: Icon(EvaIcons.flash),
+          label: Text('Tools'),
         ),
         NavigationRailDestination(
           icon: Icon(Icons.settings_outlined),

@@ -10,6 +10,16 @@ class ToDoModel extends ChangeNotifier {
     ToDo("Today's task", "Noting much to do today"),
     ToDo("Today's task", "Noting much toooooooooooooo do today"),
     ToDo("Today's task", "Noting much to do today"),
+    ToDo("Today's task", "Noting much to do today"),
+    ToDo("Today's task", "Noting much toooooooooooooo do today"),
+    ToDo("Today's task", "Noting much to do today"),
+    ToDo("Today's task", "Noting much toooooooooooooo do today"),
+    ToDo("Today's task", "Noting much to do today"),
+    ToDo("Today's task", "Noting much to do today"),
+    ToDo("Today's task", "Noting much toooooooooooooo do today"),
+    ToDo("Today's task", "Noting much to do today"),
+    ToDo("Today's task", "Noting much toooooooooooooo do today"),
+    ToDo("Today's task", "Noting much to do today"),
   ];
 
   void addToDo(String title, String task) {

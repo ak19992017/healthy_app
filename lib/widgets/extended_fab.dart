@@ -59,6 +59,7 @@ class _ExtendedFABState extends State<ExtendedFAB> {
           mainAxisSize: MainAxisSize.min,
           children: [
             TextField(
+              autofocus: true,
               decoration: InputDecoration(hintText: 'Enter title here'),
               controller: _title,
             ),

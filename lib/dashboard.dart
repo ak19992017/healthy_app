@@ -3,9 +3,11 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:healthy_app/models/side_bar_model.dart';
-import 'package:healthy_app/screens/favourites_page.dart';
+import 'package:healthy_app/screens/chats_page.dart';
 import 'package:healthy_app/screens/settings_page.dart';
-import 'package:healthy_app/screens/todo_page.dart';
+import 'package:healthy_app/screens/todos_page.dart';
+import 'package:healthy_app/screens/tools_page.dart';
+import 'package:healthy_app/screens/video_calls_page.dart';
 import 'package:healthy_app/widgets/sidebar.dart';
 import 'package:provider/provider.dart';
 
@@ -41,13 +43,17 @@ class _DashBoardState extends State<DashBoard> {
   Widget buildPages(int selectedIndex) {
     switch (selectedIndex) {
       case 0:
-        return const ToDoPage();
+        return const ToDosPage();
       case 1:
-        return const FavouritesPage();
+        return const ChatsPage();
       case 2:
+        return const VideoCallsPage();
+      case 3:
+        return const ToolsPage();
+      case 4:
         return const SettingsPage();
       default:
-        return const ToDoPage();
+        return const ToDosPage();
     }
   }
 }
