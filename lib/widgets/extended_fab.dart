@@ -37,6 +37,8 @@ class _ExtendedFABState extends State<ExtendedFAB> {
                   label: const Text('CREATE'),
                   onPressed: () => _displayDialog(context),
                   tooltip: "Add task",
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)),
                 ),
         );
       },
@@ -45,29 +47,27 @@ class _ExtendedFABState extends State<ExtendedFAB> {
 
   Future<dynamic> _displayDialog(BuildContext context) {
     return showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: const Text('Add a task to your list'),
-            content: TextField(
-              // controller: myModel.controller,
-              decoration: const InputDecoration(hintText: 'Enter task here'),
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Add a task to your list'),
+          content: TextField(
+            decoration: const InputDecoration(hintText: 'Enter task here'),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('ADD'),
+              onPressed: () {},
             ),
-            actions: <Widget>[
-              TextButton(
-                child: const Text('ADD'),
-                onPressed: () {
-                  // myModel.addToList(myModel.controller.text);
-                },
-              ),
-              TextButton(
-                child: const Text('CANCEL'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              )
-            ],
-          );
-        });
+            TextButton(
+              child: const Text('CANCEL'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            )
+          ],
+        );
+      },
+    );
   }
 }
