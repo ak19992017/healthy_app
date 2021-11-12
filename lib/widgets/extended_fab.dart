@@ -3,6 +3,8 @@
 import 'dart:ui';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:healthy_app/models/to_do_model.dart';
+import 'package:provider/provider.dart';
 
 class ExtendedFAB extends StatefulWidget {
   const ExtendedFAB({Key? key}) : super(key: key);
@@ -24,7 +26,7 @@ class _ExtendedFABState extends State<ExtendedFAB> {
         return Container(
           height: 56,
           padding: EdgeInsets.symmetric(
-            vertical: lerpDouble(0, 5, animation.value)!,
+            vertical: lerpDouble(0, 1, animation.value)!,
           ),
           child: animation.value == 0
               ? FloatingActionButton(
@@ -45,28 +47,52 @@ class _ExtendedFABState extends State<ExtendedFAB> {
     );
   }
 
-  Future<dynamic> _displayDialog(BuildContext context) {
+  _displayDialog(BuildContext context) {
+    TextEditingController _title = TextEditingController();
+    TextEditingController _task = TextEditingController();
+
+    //Create AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: const Text('Add a task to your list'),
+      content: SizedBox(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
+              decoration: InputDecoration(hintText: 'Enter title here'),
+              controller: _title,
+            ),
+            TextField(
+              decoration: InputDecoration(hintText: 'Enter task here'),
+              controller: _task,
+            ),
+          ],
+        ),
+      ),
+      actions: <Widget>[
+        TextButton(
+          child: const Text('ADD'),
+          onPressed: () {
+            context.read<ToDoModel>().addToDo(_title.text, _task.text);
+            // print(_title.value.toString());
+            // print(_title.text);
+            Navigator.of(context).pop();
+          },
+        ),
+        TextButton(
+          child: const Text('CANCEL'),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        )
+      ],
+    );
+
+    //show the dialog
     return showDialog(
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Add a task to your list'),
-          content: TextField(
-            decoration: const InputDecoration(hintText: 'Enter task here'),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('ADD'),
-              onPressed: () {},
-            ),
-            TextButton(
-              child: const Text('CANCEL'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            )
-          ],
-        );
+        return alert;
       },
     );
   }

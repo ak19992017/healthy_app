@@ -2,17 +2,17 @@
 
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:healthy_app/models/side_bar_nav_model.dart';
+import 'package:healthy_app/models/side_bar_model.dart';
 import 'package:healthy_app/widgets/extended_fab.dart';
 import 'package:healthy_app/widgets/healthy_logo.dart';
 import 'package:provider/provider.dart';
 
-class SideBarNavigation extends StatelessWidget {
-  const SideBarNavigation({Key? key}) : super(key: key);
+class SideBar extends StatelessWidget {
+  const SideBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var model = context.watch<SideBarNavModel>();
+    var model = context.watch<SideBarModel>();
 
     return NavigationRail(
       selectedIndex: model.selectdIndex,

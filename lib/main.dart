@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:healthy_app/dashboard.dart';
-import 'package:healthy_app/models/side_bar_nav_model.dart';
+import 'package:healthy_app/models/side_bar_model.dart';
+import 'package:healthy_app/models/to_do_model.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(const MyApp());
@@ -33,8 +34,11 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: Scaffold(
-        body: ChangeNotifierProvider(
-          create: (context) => SideBarNavModel(),
+        body: MultiProvider(
+          providers: [
+            ChangeNotifierProvider(create: (context) => SideBarModel()),
+            ChangeNotifierProvider(create: (context) => ToDoModel()),
+          ],
           child: DashBoard(),
         ),
       ),

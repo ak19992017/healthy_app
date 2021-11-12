@@ -1,13 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:healthy_app/models/to_do.dart';
+import 'package:healthy_app/models/to_do_model.dart';
 
 class CustomCard extends StatelessWidget {
-  final String title;
-  final String description;
-
-  const CustomCard({Key? key, required this.title, required this.description})
-      : super(key: key);
+  final ToDo todo;
+  const CustomCard({Key? key, required this.todo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class CustomCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              title,
+              todo.title,
               style: const TextStyle(
                 fontSize: 20,
                 color: Colors.white,
@@ -39,7 +38,7 @@ class CustomCard extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             Text(
-              description,
+              todo.task,
               style: const TextStyle(fontSize: 20, color: Colors.white),
             )
           ],

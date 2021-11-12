@@ -2,7 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 
-class SideBarNavModel extends ChangeNotifier {
+class SideBarModel extends ChangeNotifier {
   int _selectdIndex = 0;
   bool _extnded = true;
 
