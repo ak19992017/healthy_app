@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:healthy_app/models/to_do.dart';
+import 'package:healthy_app/models/to_do_model.dart';
 
 class CustomCard extends StatelessWidget {
   final ToDo todo;
@@ -15,7 +15,6 @@ class CustomCard extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
       clipBehavior: Clip.antiAlias,
       child: Container(
-        constraints: BoxConstraints.tight(Size.square(200)),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.redAccent, Colors.red],
@@ -39,6 +38,8 @@ class CustomCard extends StatelessWidget {
             Text(
               todo.task,
               style: const TextStyle(fontSize: 20, color: Colors.white),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 4,
             )
           ],
         ),

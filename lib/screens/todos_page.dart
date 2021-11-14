@@ -12,17 +12,19 @@ class ToDosPage extends StatelessWidget {
 
     List<Widget> buildCardWidgets() {
       List<Widget> widgetList = [];
-      for (int i = 0; i < toDoModel.toDoList.length; i++) {
+      for (int i = toDoModel.toDoList.length - 1; i >= 0; i--) {
         widgetList.add(CustomCard(todo: toDoModel.toDoList[i]));
       }
       return widgetList;
     }
 
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Wrap(
-          children: buildCardWidgets(),
-        ),
+      body: GridView.count(
+        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 25),
+        mainAxisSpacing: 8,
+        crossAxisSpacing: 8,
+        crossAxisCount: 4,
+        children: buildCardWidgets(),
       ),
     );
   }

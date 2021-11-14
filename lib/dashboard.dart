@@ -37,6 +37,7 @@ class _DashBoardState extends State<DashBoard> {
         onPressed: () => model.extnded = !model.extnded,
         tooltip: "Toggle",
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniStartFloat,
     );
   }
 
