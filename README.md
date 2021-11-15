@@ -1,5 +1,9 @@
 # healthy_app
 
+# :wink: chat ui completed
+![healthy_app](https://user-images.githubusercontent.com/71957886/141670426-677aa1b8-8d87-489d-8c1f-a6bffd21ff6d.gif)
+
+
 # :v:
 ![healthy_app](https://user-images.githubusercontent.com/71957886/141475733-aeacd693-75f9-49a4-bfbe-1db72ce2e9e7.gif)
 
