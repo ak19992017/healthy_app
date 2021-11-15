@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:healthy_app/models/chat_users_model.dart';
-import 'package:healthy_app/widgets/conversation_header.dart';
-import 'package:healthy_app/widgets/conversation_search_box.dart';
+import 'package:healthy_app/screens/chat/widgets/conversation_header.dart';
+import 'package:healthy_app/screens/chat/widgets/conversation_search_box.dart';
 
 class Conversations extends StatefulWidget {
   const Conversations({Key? key}) : super(key: key);
@@ -37,7 +37,7 @@ class _ConversationsState extends State<Conversations> {
                   messageText: chatUsers[index].messageText,
                   imageUrl: chatUsers[index].imageURL,
                   time: chatUsers[index].time,
-                  isMessageRead: (index == 0 || index == 3) ? true : false,
+                  isMessageRead: (index % 3 == 0) ? true : false,
                 );
               },
             ),
@@ -81,10 +81,25 @@ class _ConversationListState extends State<ConversationList> {
               fit: FlexFit.loose,
               child: Row(
                 children: <Widget>[
-                  CircleAvatar(
-                    backgroundImage: AssetImage(widget.imageUrl),
-                    maxRadius: 30,
-                  ),
+                  Stack(children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage(widget.imageUrl),
+                      maxRadius: 30,
+                    ),
+                    if (widget.isMessageRead == false)
+                      Positioned(
+                        bottom: 2,
+                        right: 2,
+                        child: Container(
+                          height: 15,
+                          width: 15,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.green,
+                          ),
+                        ),
+                      )
+                  ]),
                   SizedBox(
                     width: 16,
                   ),

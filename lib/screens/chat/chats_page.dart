@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:healthy_app/widgets/chat_details.dart';
-import 'package:healthy_app/widgets/conversations.dart';
+import 'package:healthy_app/screens/chat/widgets/chat_details.dart';
+import 'package:healthy_app/screens/chat/widgets/conversations.dart';
 
 class ChatsPage extends StatelessWidget {
   const ChatsPage({Key? key}) : super(key: key);

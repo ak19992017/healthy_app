@@ -43,11 +43,6 @@ class SideBar extends StatelessWidget {
           selectedIcon: Icon(EvaIcons.flash),
           label: Text('Tools'),
         ),
-        NavigationRailDestination(
-          icon: Icon(Icons.settings_outlined),
-          selectedIcon: Icon(Icons.settings),
-          label: Text('Settings'),
-        ),
       ],
       extended: model.extnded,
       // labelType: NavigationRailLabelType.none,

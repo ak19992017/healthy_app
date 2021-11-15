@@ -33,6 +33,9 @@ class _ExtendedFABState extends State<ExtendedFAB> {
                   child: const Icon(EvaIcons.plus),
                   onPressed: () => _displayDialog(context),
                   tooltip: "Add task",
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  backgroundColor: Colors.black,
                 )
               : FloatingActionButton.extended(
                   icon: const Icon(Icons.add),
@@ -41,6 +44,7 @@ class _ExtendedFABState extends State<ExtendedFAB> {
                   tooltip: "Add task",
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)),
+                  backgroundColor: Colors.black,
                 ),
         );
       },
@@ -53,6 +57,7 @@ class _ExtendedFABState extends State<ExtendedFAB> {
 
     //Create AlertDialog
     AlertDialog alert = AlertDialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
       title: const Text('Add a task to your list'),
       content: SizedBox(
         child: Column(
@@ -71,7 +76,7 @@ class _ExtendedFABState extends State<ExtendedFAB> {
         ),
       ),
       actions: <Widget>[
-        TextButton(
+        ElevatedButton(
           child: const Text('ADD'),
           onPressed: () {
             context.read<ToDoModel>().addToDo(_title.text, _task.text);
@@ -85,7 +90,7 @@ class _ExtendedFABState extends State<ExtendedFAB> {
           onPressed: () {
             Navigator.of(context).pop();
           },
-        )
+        ),
       ],
     );
 

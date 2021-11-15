@@ -3,8 +3,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:healthy_app/models/side_bar_model.dart';
-import 'package:healthy_app/screens/chats_page.dart';
-import 'package:healthy_app/screens/settings_page.dart';
+import 'package:healthy_app/screens/chat/chats_page.dart';
 import 'package:healthy_app/screens/todos_page.dart';
 import 'package:healthy_app/screens/tools_page.dart';
 import 'package:healthy_app/screens/video_calls_page.dart';
@@ -36,6 +35,8 @@ class _DashBoardState extends State<DashBoard> {
             : const Icon(EvaIcons.arrowRight),
         onPressed: () => model.extnded = !model.extnded,
         tooltip: "Toggle",
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        backgroundColor: Colors.black,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniStartFloat,
     );
@@ -51,8 +52,6 @@ class _DashBoardState extends State<DashBoard> {
         return const VideoCallsPage();
       case 3:
         return const ToolsPage();
-      case 4:
-        return const SettingsPage();
       default:
         return const ToDosPage();
     }

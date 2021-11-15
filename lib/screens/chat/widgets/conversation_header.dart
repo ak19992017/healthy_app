@@ -15,7 +15,7 @@ class ConversationHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Text(
-            "Conversations",
+            "Messages",
             style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
           ),
           Container(
