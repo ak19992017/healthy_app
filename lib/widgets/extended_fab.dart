@@ -52,7 +52,6 @@ class _ExtendedFABState extends State<ExtendedFAB> {
   }
 
   _displayDialog(BuildContext context) {
-    TextEditingController _title = TextEditingController();
     TextEditingController _task = TextEditingController();
 
     //Create AlertDialog
@@ -60,26 +59,17 @@ class _ExtendedFABState extends State<ExtendedFAB> {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
       title: const Text('Add a task to your list'),
       content: SizedBox(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(
-              autofocus: true,
-              decoration: InputDecoration(hintText: 'Enter title here'),
-              controller: _title,
-            ),
-            TextField(
-              decoration: InputDecoration(hintText: 'Enter task here'),
-              controller: _task,
-            ),
-          ],
+        child: TextField(
+          autofocus: true,
+          decoration: InputDecoration(hintText: 'Enter task here'),
+          controller: _task,
         ),
       ),
       actions: <Widget>[
         ElevatedButton(
           child: const Text('ADD'),
           onPressed: () {
-            context.read<ToDoModel>().addToDo(_title.text, _task.text);
+            context.read<ToDoModel>().addToDo(_task.text);
             // print(_title.value.toString());
             // print(_title.text);
             Navigator.of(context).pop();

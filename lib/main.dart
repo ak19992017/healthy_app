@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:healthy_app/dashboard.dart';
+import 'package:healthy_app/dashboard_mobile.dart';
 import 'package:healthy_app/models/side_bar_model.dart';
 import 'package:healthy_app/models/to_do_model.dart';
 import 'package:provider/provider.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 void main() => runApp(const MyApp());
 
@@ -29,13 +31,23 @@ class MyApp extends StatelessWidget {
           textStyle: const TextStyle(fontSize: 15, color: Colors.white),
         ),
       ),
-      home: Scaffold(
-        body: MultiProvider(
-          providers: [
-            ChangeNotifierProvider(create: (context) => SideBarModel()),
-            ChangeNotifierProvider(create: (context) => ToDoModel()),
-          ],
-          child: DashBoard(),
+      home: SafeArea(
+        child: Scaffold(
+          body: MultiProvider(
+            providers: [
+              ChangeNotifierProvider(create: (context) => SideBarModel()),
+              ChangeNotifierProvider(create: (context) => ToDoModel()),
+            ],
+            child: ResponsiveBuilder(
+              builder: (context, sizingInformation) {
+                if (sizingInformation.deviceScreenType ==
+                    DeviceScreenType.desktop) {
+                  return DashBoard();
+                }
+                return DashBoardMobile();
+              },
+            ),
+          ),
         ),
       ),
     );

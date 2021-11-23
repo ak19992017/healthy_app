@@ -24,23 +24,23 @@ class SideBar extends StatelessWidget {
       ),
       destinations: const <NavigationRailDestination>[
         NavigationRailDestination(
-          icon: Icon(EvaIcons.gridOutline),
-          selectedIcon: Icon(EvaIcons.grid),
+          icon: Icon(EvaIcons.edit2Outline, color: Colors.red),
+          selectedIcon: Icon(EvaIcons.edit2, color: Colors.red),
           label: Text('To Do'),
         ),
         NavigationRailDestination(
-          icon: Icon(EvaIcons.messageSquareOutline),
-          selectedIcon: Icon(EvaIcons.messageSquare),
+          icon: Icon(EvaIcons.messageSquareOutline, color: Colors.green),
+          selectedIcon: Icon(EvaIcons.messageSquare, color: Colors.green),
           label: Text('Chats'),
         ),
         NavigationRailDestination(
-          icon: Icon(EvaIcons.videoOutline),
-          selectedIcon: Icon(EvaIcons.video),
+          icon: Icon(EvaIcons.videoOutline, color: Colors.lightBlue),
+          selectedIcon: Icon(EvaIcons.video, color: Colors.lightBlue),
           label: Text('Video Calls'),
         ),
         NavigationRailDestination(
-          icon: Icon(EvaIcons.flashOutline),
-          selectedIcon: Icon(EvaIcons.flash),
+          icon: Icon(EvaIcons.flashOutline, color: Colors.amber),
+          selectedIcon: Icon(EvaIcons.flash, color: Colors.amber),
           label: Text('Tools'),
         ),
       ],

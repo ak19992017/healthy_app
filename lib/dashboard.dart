@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:healthy_app/models/side_bar_model.dart';
 import 'package:healthy_app/screens/chat/chats_page.dart';
 import 'package:healthy_app/screens/todos_page.dart';
-import 'package:healthy_app/screens/tools_page.dart';
+import 'package:healthy_app/screens/tools/tools_page.dart';
 import 'package:healthy_app/screens/video_calls_page.dart';
 import 'package:healthy_app/widgets/sidebar.dart';
 import 'package:provider/provider.dart';

@@ -27,20 +27,19 @@ class CustomCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              todo.title,
-              style: const TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 4),
-            Text(
               todo.task,
-              style: const TextStyle(fontSize: 20, color: Colors.white),
-              overflow: TextOverflow.ellipsis,
-              maxLines: 4,
-            )
+              style: const TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
+            ),
+            // const SizedBox(height: 4),
+            // Text(
+            //   "Too much work to do. Are you ready?. Let us 🔥 the world",
+            //   style: const TextStyle(fontSize: 20, color: Colors.white),
+            //   overflow: TextOverflow.ellipsis,
+            //   maxLines: 2,
+            // )
           ],
         ),
       ),
